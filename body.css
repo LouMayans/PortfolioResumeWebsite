@@ -1,0 +1,39 @@
+/* 
+Color Pallete:
+#DDFFF7
+#93E1D8
+#2B4162
+#818479
+#393E41
+
+*/
+
+.section1{
+    background-color: tomato;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+.section1 img{
+    
+    position: absolute;
+    top: -70%;
+    bottom: -70%;
+    width: 100%;
+}
+.section2{
+    background-color: green;
+    height: 500px;
+}
+
+footer{
+    height: 100px;
+    width: auto;
+    overflow: hidden;
+}
+footer img{
+    position: relative;
+    transform: scale(.5);
+    top: -100px;
+    object-fit: cover;
+}

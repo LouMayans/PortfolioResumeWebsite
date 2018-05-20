@@ -1,0 +1,130 @@
+/* 
+Color Pallete:
+#DDFFF7
+#93E1D8
+#2B4162
+#818479
+#393E41
+
+*/
+:root {
+    --Background: #393D3F;
+    --SecondaryColor: #62929E;
+    --HeaderBackgroundColor: none;
+    --HeaderFontColor: #FFFFFF;
+    --SecondHeaderFontColor: black;
+
+    --Color2: #C6C5B9;
+    --Color3: #FFFFFF;
+    --Color5: #393E41;
+  }
+
+
+body{
+    background: var(--Background);
+    margin: 0;
+    letter-spacing: 0px;
+    font-family: sans-serif;
+    
+}
+header 
+{
+    background:var(--HeaderBackgroundColor);
+    margin: 0;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+.topnav ul
+{
+    margin: 0;
+    padding: 0;
+    border-color: white;
+    border-width: 2px;
+    text-align: center;
+    
+}
+.topnav ul li
+{
+
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px 0px 1px 29px;
+    
+    color: var(--HeaderFontColor);
+    
+    letter-spacing: 2px;
+
+
+}
+.topnav ul li a
+{
+    color: inherit;
+    width: 0;
+    background: var(--HeaderBackgroundColor);
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 1px 2px;
+  
+}
+
+@keyframes rotate{
+    0%{
+        background: var(--HeaderBackgroundColor);
+        color: inherit;
+        
+    }
+    50%{
+        transform: rotate(50deg);
+    }
+    100%{
+        background: var(--HeaderFontColor);
+        color: var(--SecondHeaderFontColor);
+    }
+}
+.topnav ul li a:hover{
+    animation: rotate 500ms ease-in-out forwards;
+}
+.topnav ul li a.current{
+    background: var(--HeaderFontColor);
+    color: var(--SecondHeaderFontColor);
+}
+#header.out {
+    animation-name: slideUp;
+    animation-fill-mode: forwards;
+    animation-duration: .5s;
+    visibility: visible;
+}
+#header.in {
+    animation-name: slideDown;
+    animation-fill-mode: forwards;
+    animation-duration: .4s;
+    visibility: visible;
+}
+
+
+@keyframes slideUp {
+    0% {
+        opacity: 100%;
+        transform: translateY(0%);
+    } 
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    } 
+    100% {
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+
+
+

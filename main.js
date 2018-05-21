@@ -15,7 +15,7 @@ function resize(){
     {
         screenSmall = true;
         div1 = $('.hName');
-        div2 = $('.one');
+        div2 = $('.hHome');
 
         tdiv1 = div1.clone();
         tdiv2 = div2.clone();
@@ -31,7 +31,7 @@ function resize(){
     }
     else if ($(window).width() > 620 && screenSmall == true){
         screenSmall = false;
-        div1 = $('.one');
+        div1 = $('.hHome');
         div2 = $('.hName');
 
         tdiv1 = div1.clone();
@@ -49,13 +49,35 @@ function resize(){
 
 $(function (){
     var lastScrollTop = 0, delta = 5;
+    var downBool = false;
     $(window).scroll(function(event){
        var st = $(this).scrollTop();
-       
+        
         if(Math.abs(lastScrollTop - st) <= delta)
         return;
-       
-
+        
+        //trying to get position of the elements so this can be dynamic instead of fixed.
+        //console.log("home = " + $("li.hHome").offset().top - $(this).scrollTop());
+        $("li.hHome > a")[0].className = "";
+        $("li.hAbout > a")[0].className = "";
+        $("li.hProjects > a")[0].className = "";
+        $("li.hContact > a")[0].className = "";
+        if(st <= 490)
+        {
+            $("li.hHome > a")[0].className = "current";
+        }
+        else if( st <= 1990)
+        {
+            $("li.hAbout > a")[0].className = "current";
+        }
+        else if(st <= 3490)
+        {
+            $("li.hProjects > a")[0].className = "current";
+        }
+        else if(st <= 4990)
+        {
+            $("li.hContact > a")[0].className = "current";
+        }
         //var headerClassName = document.getElementById("header").className;
         
         //CHECK IF ANIMATION PLAYING AND DONT STOP IT?
@@ -63,11 +85,38 @@ $(function (){
         if (st > lastScrollTop){
             //scroll down
             //$(this).toggleClass("out");
-            document.getElementById("header").className = "out";
+            if(downBool)
+            {
+                lastScrollTop = st;
+            }
+            else
+            {
+                if(lastScrollTop - st <= -110)
+                {
+                    downBool = true;
+                    lastScrollTop = st;
+                    document.getElementById("header").className = "out";
+                } 
+            }
+            
         } else {
             //scroll up
-            document.getElementById("header").className = "in";
+            if(!downBool)
+            {
+                lastScrollTop = st;
+            }
+            else
+            {
+                if(lastScrollTop - st >= 110)
+                {
+                    downBool = false;
+                    lastScrollTop = st;
+                    document.getElementById("header").className = "in";
+                } 
+            }
         }
-        lastScrollTop = st;
+        console.log("lastScroll " + lastScrollTop);
+        console.log("st " + st);
+        
     });
 });

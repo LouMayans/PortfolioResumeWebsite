@@ -8,24 +8,31 @@ Color Pallete:
 
 */
 
-.section1{
+.Home{
     background-color: tomato;
     height: 500px;
     position: relative;
     overflow: hidden;
 }
-.section1 img{
+.Home img{
     
     position: absolute;
     top: -70%;
     bottom: -70%;
     width: 100%;
 }
-.section2{
+.About{
     background-color: green;
-    height: 500px;
+    height: 1500px;
 }
-
+.Projects{
+    background-color: purple;
+    height: 1500px;
+}
+.Contact{
+    background-color: brown;
+    height: 1500px;
+}
 footer{
     height: 100px;
     width: auto;

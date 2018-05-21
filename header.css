@@ -66,25 +66,14 @@ header
     text-decoration: none;
     border-radius: 3px;
     padding: 1px 2px;
+    transition: all 500ms ease-in-out;
   
 }
 
-@keyframes rotate{
-    0%{
-        background: var(--HeaderBackgroundColor);
-        color: inherit;
-        
-    }
-    50%{
-        transform: rotate(50deg);
-    }
-    100%{
-        background: var(--HeaderFontColor);
-        color: var(--SecondHeaderFontColor);
-    }
-}
+
 .topnav ul li a:hover{
-    animation: rotate 500ms ease-in-out forwards;
+    color: var(--SecondHeaderFontColor);
+    background: var(--HeaderFontColor);
 }
 .topnav ul li a.current{
     background: var(--HeaderFontColor);

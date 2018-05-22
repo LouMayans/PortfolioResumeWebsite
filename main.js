@@ -47,6 +47,14 @@ function resize(){
     }
 }
 
+function getPos(el) {
+    // yay readability
+    for (var lx=0, ly=0;
+         el != null;
+         lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
+    return {x: lx,y: ly};
+}
+
 $(function (){
     var lastScrollTop = 0, delta = 5;
     var downBool = false;
@@ -56,25 +64,27 @@ $(function (){
         if(Math.abs(lastScrollTop - st) <= delta)
         return;
         
+        
+    
         //trying to get position of the elements so this can be dynamic instead of fixed.
         //console.log("home = " + $("li.hHome").offset().top - $(this).scrollTop());
         $("li.hHome > a")[0].className = "";
         $("li.hAbout > a")[0].className = "";
         $("li.hProjects > a")[0].className = "";
         $("li.hContact > a")[0].className = "";
-        if(st <= 490)
+        if(st <= ($('.About')[0].offsetTop - 10))
         {
             $("li.hHome > a")[0].className = "current";
         }
-        else if( st <= 1990)
+        else if( st <= ($('.Projects')[0].offsetTop - 10))
         {
             $("li.hAbout > a")[0].className = "current";
         }
-        else if(st <= 3490)
+        else if(st <= ($('.Contact')[0].offsetTop - 10))
         {
             $("li.hProjects > a")[0].className = "current";
         }
-        else if(st <= 4990)
+        else if(st <= $('.footer')[0].offsetTop - 10)
         {
             $("li.hContact > a")[0].className = "current";
         }
@@ -115,8 +125,6 @@ $(function (){
                 } 
             }
         }
-        console.log("lastScroll " + lastScrollTop);
-        console.log("st " + st);
         
     });
 });

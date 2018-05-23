@@ -105,7 +105,7 @@ $(function (){
                 {
                     downBool = true;
                     lastScrollTop = st;
-                    document.getElementById("header").className = "out";
+                    document.getElementById("navContainer").className = "out";
                 } 
             }
             
@@ -121,7 +121,7 @@ $(function (){
                 {
                     downBool = false;
                     lastScrollTop = st;
-                    document.getElementById("header").className = "in";
+                    document.getElementById("navContainer").className = "in";
                 } 
             }
         }

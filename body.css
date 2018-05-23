@@ -5,21 +5,71 @@ Color Pallete:
 #2B4162
 #818479
 #393E41
-
+http://chuckgroom.com/
 */
 
+:root {
+    --Background: #393D3F;
+    --SecondaryColor: #62929E;
+    --HeaderBackgroundColor: rgb(43, 90, 129);
+    --HeaderFontColor: #FFFFFF;
+    --SecondHeaderFontColor: black;
+
+    --Color2: #C6C5B9;
+    --Color3: #FFFFFF;
+    --Color5: #393E41;
+  }
 .Home{
+    display: block;
     background-color: tomato;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
+    text-align: center;
+
 }
-.Home img{
+.container{
     
-    position: absolute;
-    top: -70%;
-    bottom: -70%;
-    width: 100%;
+    margin-left:  15px;
+    margin-right: 15px;
+}
+.col{
+    padding-top: 90px;
+    margin-left:  15px;
+    margin-right: 15px;
+    text-align: center;
+}
+.headshotContainer{
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 200px;
+}
+.Home .headshot{
+    width: 300px;
+    right: 5px;
+}
+.introText{
+    padding: 10px 0 20px 0;
+}
+.introText .name{
+    display: block;
+    padding: 0 0 10px 0;
+    font-size: 2.25em;
+    color: white;
+}
+hr{
+    
+    display: block;
+    height: 5px;
+    width: 225px;
+    background-color: white;
+    border: 0;
+    border-radius: 10px;
+}
+.introText .skill{
+    display: block;
+    padding: 10px 0 0 0;
+    font-size: 1.1em;
+    color: white;
 }
 .About{
     background-color: green;

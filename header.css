@@ -10,7 +10,7 @@ Color Pallete:
 :root {
     --Background: #393D3F;
     --SecondaryColor: #62929E;
-    --HeaderBackgroundColor: none;
+    --HeaderBackgroundColor: rgb(43, 90, 129);
     --HeaderFontColor: #FFFFFF;
     --SecondHeaderFontColor: black;
 
@@ -27,7 +27,7 @@ body{
     font-family: sans-serif;
     
 }
-header 
+#navContainer 
 {
     background:var(--HeaderBackgroundColor);
     margin: 0;
@@ -79,13 +79,13 @@ header
     background: var(--HeaderFontColor);
     color: var(--SecondHeaderFontColor);
 }
-#header.out {
+#navContainer.out {
     animation-name: slideUp;
     animation-fill-mode: forwards;
     animation-duration: .5s;
     visibility: visible;
 }
-#header.in {
+#navContainer.in {
     animation-name: slideDown;
     animation-fill-mode: forwards;
     animation-duration: .4s;
